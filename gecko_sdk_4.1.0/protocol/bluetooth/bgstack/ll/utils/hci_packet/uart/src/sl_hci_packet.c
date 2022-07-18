@@ -302,8 +302,8 @@ void sl_btctrl_hci_packet_read(void)
 
 uint32_t hci_common_transport_transmit(uint8_t *data, int16_t len)
 {
-  #ifdef ENABLE_HCI_CONTROLLER_TO_HOST_FLOW_CONTROL
   bool forward_packet = true;
+  #ifdef ENABLE_HCI_CONTROLLER_TO_HOST_FLOW_CONTROL
   //TODO: check the packet type.
   //        * if it is an event, then we can simply transmit it.
   //           * if a HCI_Disconnection_Complete event was sent out, then the host_available_buffer_size should be set to host_total_buffer_size (reset)
